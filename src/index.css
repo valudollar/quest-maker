@@ -34,8 +34,15 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin: 0.5rem;
 }
 
+h2 {
+  margin: 0.5rem;
+}
+p {
+  margin: 0.2rem;
+}
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -45,8 +52,10 @@ button {
   font-family: inherit;
   background-color: #1a1a1a;
   cursor: pointer;
+  margin: 0.5rem;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
