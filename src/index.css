@@ -27,8 +27,8 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  /* min-width: 320px;
+  min-height: 100vh; */
 }
 
 h1 {
@@ -41,7 +41,18 @@ h2 {
   margin: 0.5rem;
 }
 p {
-  margin: 0.2rem;
+  text-shadow: 1px 0 0 white, 0 1px 0 white, -1px 0 0 white, 0 -1px 0 white;
+  color: black;
+  /* text-shadow: 1px 0 0 black, 0 1px 0 black, -1px 0 0 black, 0 -1px 0 black;
+  color: white; */
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+label {
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 button {
   border-radius: 8px;
@@ -53,7 +64,10 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   margin: 0.5rem;
+  max-width: fit-content;
   transition: border-color 0.25s;
+
+  align-self: center;
 }
 
 button:hover {

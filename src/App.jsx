@@ -7,7 +7,9 @@ import "./App.css";
 function App() {
   const printRef = useRef();
   const [title, setTitle] = useState("Pursuit of Intelligence II");
-  const [message, setMessage] = useState("Help me do my homework");
+  const [message, setMessage] = useState(
+    "Help me complete my Math homework by tommorow. Please ensure I will receive a minimum 50% grade."
+  );
   const [reward, setReward] = useState("Bubble Tea of your choice");
   const [deadline, setDeadline] = useState("2 days from now");
 
@@ -54,50 +56,55 @@ function App() {
         <h3>create fun quests for your friends to complete</h3>
       </div>
       <div className="content">
-        <div className="imageContainer">
-          {/* <h2>sample quest</h2> */}
-          <div className="Quest" ref={printRef}>
-            <p className="title">{title}</p>
-            {/* <hr class="solid"></hr> */}
-            <p className="text">{message}</p>
-            <p className="title">Rewards:</p>
-            <p className="text">{reward}</p>
-
-            {/* <p className="title">Deadline:</p>
-            <p className="text">{deadline}</p> */}
+        <div className="questDetails">
+          <div className="imageContainer" ref={printRef}>
+            <div className="Quest">
+              <p className="questtitle">{title}</p>
+              <p className="questmessage">{message}</p>
+              <p className="rewardtitle">Rewards:</p>
+              <p className="reward">{reward}</p>
+              <p className="question"> Do you accept?</p>
+              <div className="accept">
+                <div className="yes">
+                  <p>YES</p>
+                </div>
+                <div className="no">
+                  <p>NO</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <button onClick={downloadImage}>Download PNG</button>
         </div>
         <form className="inputContainer">
-          <label>Enter Title of your Request here</label>
+          <label>Quest Title</label>
           <input
             className="messageBox"
             size="50"
             onChange={changeTitle}
-            maxLength="100"
+            maxLength="30"
             placeholder="Pursuit of Intelligence II"
             type="text"
             id="title"
             name="title"
             required
           ></input>
-          <label>Enter your Request here</label>
+          <label>Quest Message</label>
           <input
             className="messageBox"
             size="50"
             onChange={changeMessage}
-            maxLength="100"
-            placeholder="e.g. Help me do my homework"
+            maxLength="90"
+            placeholder="e.g. Help me complete my Math homework by tommorow..."
             type="text"
             id="message"
             name="message"
             required
           ></input>
-          <label>Enter your Reward here</label>
+          <label>Quest Reward</label>
           <input
             className="messageBox"
             size="50"
-            maxLength="100"
+            maxLength="60"
             onChange={changeReward}
             placeholder="e.g. Bubble Tea of your choice"
             type="text"
@@ -105,7 +112,8 @@ function App() {
             name="reward"
             required
           ></input>
-          <label>Enter your Deadline here</label>
+          <button onClick={downloadImage}>Download PNG</button>
+          {/* <label>Enter your Deadline here</label> */}
           {/* <input
             className="messageBox"
             size="50"
