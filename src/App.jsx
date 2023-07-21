@@ -63,17 +63,15 @@ function App() {
         <h3>create fun quests for your friends to complete</h3>
       </div>
       <div className="content">
-        <div className="questDetails">
-          <div className="imageContainer" ref={printRef}>
-            <div className="Quest">
-              <p className="questtitle">{title}</p>
-              <p className="name">{greeting}</p>
-              <p className="questmessage">{message}</p>
-              {/* <p className="wave">~</p> */}
-              <p className="rewardtitle">Reward</p>
-              <p className="reward">{reward}</p>
-              <p className="question"> Do you accept the quest?</p>
-            </div>
+        <div className="imageContainer" ref={printRef}>
+          <div className="Quest">
+            <p className="questtitle">{title}</p>
+            <p className="name">{greeting}</p>
+            <p className="questmessage">{message}</p>
+            {/* <p className="wave">~</p> */}
+            <p className="rewardtitle">Reward</p>
+            <p className="reward">{reward}</p>
+            <p className="question"> Do you accept the quest?</p>
           </div>
         </div>
         <form className="inputContainer">
