@@ -1,7 +1,8 @@
 import { useState, useRef } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+// import reactLogo from "./assets/react.svg";
+// import viteLogo from "/vite.svg";
 import html2canvas from "html2canvas";
+import scroll1 from "./assets/scroll1.png";
 import "./App.css";
 
 function App() {
@@ -60,19 +61,22 @@ function App() {
           <div className="imageContainer" ref={printRef}>
             <div className="Quest">
               <p className="questtitle">{title}</p>
+              <p className="name">Greetings Stranger</p>
               <p className="questmessage">{message}</p>
-              <p className="rewardtitle">Rewards:</p>
+              <p className="wave">~</p>
+              <p className="rewardtitle">Reward</p>
               <p className="reward">{reward}</p>
               <p className="question"> Do you accept?</p>
-              <div className="accept">
+              {/* <div className="accept">
                 <div className="yes">
                   <p>YES</p>
                 </div>
                 <div className="no">
                   <p>NO</p>
                 </div>
-              </div>
+              </div> */}
             </div>
+            {/* </div> */}
           </div>
         </div>
         <form className="inputContainer">
@@ -93,7 +97,7 @@ function App() {
             className="messageBox"
             size="50"
             onChange={changeMessage}
-            maxLength="90"
+            maxLength="11d0"
             placeholder="e.g. Help me complete my Math homework by tommorow..."
             type="text"
             id="message"
@@ -104,7 +108,7 @@ function App() {
           <input
             className="messageBox"
             size="50"
-            maxLength="60"
+            maxLength="54"
             onChange={changeReward}
             placeholder="e.g. Bubble Tea of your choice"
             type="text"
