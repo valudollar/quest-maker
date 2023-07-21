@@ -36,8 +36,7 @@
   justify-content: center;
   align-items: center;
   text-shadow: none;
-  color: #725119;
-  /* text-shadow: 1px 0 0 white, 0 1px 0 white, -1px 0 0 white, 0 -1px 0 white; */
+  color: #55381b;
 }
 .no {
   display: flex;
@@ -78,9 +77,6 @@
 
   height: 5%;
   color: #55381b;
-  /* text-shadow: 1px 0 0 white, 0 1px 0 white, -1px 0 0 white, 0 -1px 0 white; */
-
-  /* text-shadow: 1px 0 0 black, 0 1px 0 black, -1px 0 0 black, 0 -1px 0 black; */
 }
 
 .name {
@@ -89,12 +85,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-  height: 5%;
+  height: 10%;
+  margin-left: 4.5rem;
+  margin-right: 4.5rem;
   color: #55381b;
-  /* text-shadow: 1px 0 0 white, 0 1px 0 white, -1px 0 0 white, 0 -1px 0 white; */
-
-  /* text-shadow: 1px 0 0 black, 0 1px 0 black, -1px 0 0 black, 0 -1px 0 black; */
+  text-align: start;
 }
 .questmessage {
   font-size: 0.6rem;
@@ -106,7 +101,6 @@
   flex-wrap: wrap;
   margin-right: 4.5rem;
   color: #725119;
-  /* text-shadow: 1px 0 0 white, 0 1px 0 white, -1px 0 0 white, 0 -1px 0 white; */
 }
 .reward {
   font-size: 0.6rem;
@@ -115,9 +109,8 @@
   justify-content: center;
   height: 15%;
   margin-left: 4.5rem;
-  color: #55381b;
+  color: #725119;
   margin-right: 4.5rem;
-  /* text-shadow: 1px 0 0 white, 0 1px 0 white, -1px 0 0 white, 0 -1px 0 white; */
 }
 .wave {
   font-size: 0.7rem;
@@ -144,7 +137,6 @@
   align-items: center;
 }
 .Quest {
-  /* background-color: rgb(236, 216, 182); */
   width: 90%;
   height: 90%;
   display: flex;

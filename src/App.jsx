@@ -9,14 +9,21 @@ function App() {
   const printRef = useRef();
   const [title, setTitle] = useState("Pursuit of Intelligence II");
   const [message, setMessage] = useState(
-    "Help me complete my Math homework by tommorow. Please ensure I will receive a minimum 50% grade."
+    "There is a mathematics assignment which requires your immediate assistance. Please ensure passing grade. "
   );
-  const [reward, setReward] = useState("Bubble Tea of your choice");
-  const [deadline, setDeadline] = useState("2 days from now");
+  const [reward, setReward] = useState(
+    "Bubble Tea of your choice (toppings not included)"
+  );
+  const [greeting, setGreeting] = useState("For the brave and the strong,");
 
   function changeMessage(e) {
     const text = e.target.value;
     setMessage(text);
+  }
+
+  function changeGreeting(e) {
+    const text = e.target.value;
+    setGreeting(text);
   }
 
   function changeTitle(e) {
@@ -27,12 +34,10 @@ function App() {
     const text = e.target.value;
     setReward(text);
   }
-  function changeDeadline(e) {
-    const text = e.target.value;
-    setDeadline(text);
-  }
 
-  const downloadImage = async () => {
+  const downloadImage = async (event) => {
+    event.preventDefault(); // Prevent the default anchor click behavior
+
     const element = printRef.current;
     const canvas = await html2canvas(element);
 
@@ -50,6 +55,7 @@ function App() {
       window.open(data);
     }
   };
+
   return (
     <>
       <div>
@@ -61,50 +67,53 @@ function App() {
           <div className="imageContainer" ref={printRef}>
             <div className="Quest">
               <p className="questtitle">{title}</p>
-              <p className="name">Greetings Stranger</p>
+              <p className="name">{greeting}</p>
               <p className="questmessage">{message}</p>
-              <p className="wave">~</p>
+              {/* <p className="wave">~</p> */}
               <p className="rewardtitle">Reward</p>
               <p className="reward">{reward}</p>
-              <p className="question"> Do you accept?</p>
-              {/* <div className="accept">
-                <div className="yes">
-                  <p>YES</p>
-                </div>
-                <div className="no">
-                  <p>NO</p>
-                </div>
-              </div> */}
+              <p className="question"> Do you accept the quest?</p>
             </div>
-            {/* </div> */}
           </div>
         </div>
         <form className="inputContainer">
-          <label>Quest Title</label>
+          <label>Title</label>
           <input
             className="messageBox"
             size="50"
             onChange={changeTitle}
             maxLength="30"
-            placeholder="Pursuit of Intelligence II"
+            placeholder="e.g. Pursuit of Intelligence II"
             type="text"
             id="title"
             name="title"
             required
           ></input>
-          <label>Quest Message</label>
+          <label>Greeting</label>
+          <input
+            className="messageBox"
+            size="50"
+            onChange={changeGreeting}
+            maxLength="36"
+            placeholder="e.g.For the brave and the strong"
+            type="text"
+            id="greeting"
+            name="greeting"
+            required
+          ></input>
+          <label>Message</label>
           <input
             className="messageBox"
             size="50"
             onChange={changeMessage}
-            maxLength="11d0"
-            placeholder="e.g. Help me complete my Math homework by tommorow..."
+            maxLength="110"
+            placeholder="e.g.There is a mathematics assignment..."
             type="text"
             id="message"
             name="message"
             required
           ></input>
-          <label>Quest Reward</label>
+          <label>Reward</label>
           <input
             className="messageBox"
             size="50"
@@ -117,17 +126,6 @@ function App() {
             required
           ></input>
           <button onClick={downloadImage}>Download PNG</button>
-          {/* <label>Enter your Deadline here</label> */}
-          {/* <input
-            className="messageBox"
-            size="50"
-            maxLength="30"
-            onChange={changeDeadline}
-            placeholder="e.g. 2 days from now"
-            type="text"
-            id="deadline"
-            name="deadline"
-          ></input> */}
         </form>
       </div>
 
